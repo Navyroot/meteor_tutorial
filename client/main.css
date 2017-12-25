@@ -1,0 +1,10 @@
+/* CSS declarations go here */
+.header{
+    font-size: 100px;
+}
+body{
+    padding-top: 30px;
+}
+.styleBtn{
+    margin-bottom: 15px;
+}

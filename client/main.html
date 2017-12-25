@@ -1,0 +1,58 @@
+<head>
+  <title>app</title>
+</head>
+
+<body class="container">
+  {{> data}}
+</body>
+
+<template name="data">
+  <h1 class="text text-center">Welcome</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="hidden" name="id" value="{{txtid}}">
+      <input type="text" class="form-control" name="name" value={{txtname}}>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <input type="text" class="form-control" name="gender" value={{txtgender}}>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="text" class="form-control" name="age" value={{txtage}}>
+    </div>
+    
+    <button class="btn btn-primary btn-sm styleBtn" name="btn-add">Add More</button>
+    <button class="btn btn-primary btn-sm btn-update styleBtn">Update</button>
+    
+  </form>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each listAllTask}}
+      <tr>
+        <td hidden>{{_id}}</td>
+        <td>{{name}}</td>
+        <td>{{gender}}</td>
+        <td>{{age}} </td>
+        <td>
+          <button class="btn btn-xs btn-danger remove"> x </button>
+          <button class="btn btn-xs btn-success btn-edit">edit</button>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+
+  </table>
+
+
+</template>
